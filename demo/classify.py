@@ -30,6 +30,8 @@ def get_data_for_test(path, fake, block):  # fake:manipulated=1 original=0
 
     print("Loading data and embedding...")
     for file in tqdm(files):
+        if not file.endswith(".txt"):
+            continue
         vectors = np.loadtxt(path + file)
         video_y.append(fake)
 
